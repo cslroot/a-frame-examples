@@ -66,8 +66,8 @@ a {
 }
 #button {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  bottom: 20px;
+  left: 20px;
   padding: 8px;
   color: #fff;
   background-color: #555;
