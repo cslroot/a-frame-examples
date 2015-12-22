@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>A-Frame Interactive mouseenter/mouseleave example by @rootx</title>
+  <!-- <script src="https://aframe.io/releases/latest/aframe.min.js" charset="utf-8"></script> -->
+  <script src="https://aframe.io/releases/latest/aframe.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5.1/dat.gui.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-camera position="0 1.8 4"
+      cursor-visible="true"
+      cursor-scale="2"
+      cursor-color="#4CC3D9"
+      cursor-offset="2"
+      cursor-maxdistance="100"
+      cursor-opacity="0.5">
+    </a-camera>
+
+    <a-cube id="target1" color="#666" position="-1 0 0">
+      <a-mouseenter color="#066"></a-mouseenter>
+      <a-mouseenter target="#target2" color="#066" position="1 1 0"></a-mouseenter>
+
+      <a-mouseleave color="#666"></a-mouseleave>
+      <a-mouseleave target="#target2" color="#666" position="1 0 0"></a-mouseleave>
+    </a-cube>
+
+    <a-cube id="target2" color="#666" position="1 0 0">
+      <a-mouseenter color="#606"></a-mouseenter>
+      <a-mouseenter target="#target1" color="#606" position="-1 1 0"></a-mouseenter>
+
+      <a-mouseleave color="#666"></a-mouseleave>
+      <a-mouseleave target="#target1" color="#666" position="-1 0 0"></a-mouseleave>
+    </a-cube>
+  </a-scene>
+</body>
+
+</html>
