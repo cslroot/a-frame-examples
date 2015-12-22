@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>A-Frame Demo Bunny @rootx</title>
+  <!-- <script src="https://aframe.io/releases/latest/aframe.min.js" charset="utf-8"></script> -->
+  <script src="https://aframe.io/releases/latest/aframe.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5.1/dat.gui.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-asset>
+      <img id="checker" src="assets/images/checker2048.png">
+      <a-mixin id="bunny" loader="src: assets/models/bunny_with_normals.obj; format: obj"></a-mixin>
+    </a-asset>
+
+    <template is="a-template" element="csl-ground">
+      <a-plane color="#333" rotation="90 0 0" width="100" height="100"></a-plane>
+    </template>
+
+    <template is="a-template" element="csl-bunny">
+      <a-model format="obj" src="assets/models/bunny_with_normals.obj" scale="10 10 10" position="0 0 0" rotation="0 0 0" color="#666">
+        <a-animation attribute="position" from="0 -1 0" to="0 2.0 0" repeat="indefinite" easing="ease-expo" fill="forwards" direction="alternate" dur="1000"></a-animation>
+
+        <a-mouseenter scale="2 2 2" color="#f66"></a-mouseenter>
+        <a-mouseleave scale="1 1 1" color="#fff"></a-mouseleave>
+      </a-model>
+    </template>
+
+    <template is="a-template" element="csl-bunny-around">
+      <a-animation attribute="rotation" from="0 0 0" to="0 360 0" repeat="indefinite" easing="linear" fill="forwards" dur="30000"></a-animation>
+      <csl-bunny position="5 0 0" rotation="0 -90 0"></csl-bunny>
+      <csl-bunny position="0 0 5" rotation="0 180 0"></csl-bunny>
+      <csl-bunny position="-5 0 0" rotation="0 90 0">></csl-bunny>
+      <csl-bunny position="0 0 -5" rotation="0 0 0">></csl-bunny>
+    </template>
+
+    <a-camera id="camera" position="0 1.8 0" fov="80" near="0.5" far="10000" cursor-visible="true" cursor-scale="1" cursor-color="blue" cursor-maxdistance="1000" cursor-offset="1" look-controls-enabled="true" wasd-controls-enabled="true">
+      <!-- カメラにアニメーションを付与しようとしましたが，まともに動作しません（3FPSくらいになる） -->
+    </a-camera>
+
+
+    <csl-bunny-around> </csl-bunny-around>
+    <csl-bunny-around rotation="0 30 0"> </csl-bunny-around>
+    <csl-bunny-around rotation="0 60 0"> </csl-bunny-around>
+
+    <csl-ground position="0 0 0" visible="false"></csl-ground>
+
+    <a-sky src="assets/images/checker2048.png"></a-sky>
+    <a-light id="hemisphere" type="hemisphere" intensity="0.5" color="#00f" groundColor="#a33"></a-light>
+    <a-light id="dirlight" type="directional" intensity="1.0" position="5 5 5" color="#77aafc"></a-light>
+    <a-light id="spot" type="spot" intensity="1" position="0 5 5" color="#fff"></a-light>
+
+  </a-scene>
+</body>
+
+</html>
