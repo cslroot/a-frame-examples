@@ -12,25 +12,24 @@
 
 <body>
   <a-scene>
-
     <template is="a-template" element="a-lot-of-cubes">
-  <a-cube color="red" depth="1" height="1" width="1" position="-1 0 0"></a-cube>
-  <a-cube color="blue" depth="1" height="1" width="1" position="0 1 0"></a-cube>
-  <a-cube color="green" depth="1" height="1" width="1" position="1 0 0"></a-cube>
-</template>
+      <a-cube color="red" depth="1" height="1" width="1" position="-1 0 0"></a-cube>
+      <a-cube color="blue" depth="1" height="1" width="1" position="0 1 0"></a-cube>
+      <a-cube color="green" depth="1" height="1" width="1" position="1 0 0"></a-cube>
+    </template>
 
-<a-lot-of-cubes position="0 3 0"></a-lot-of-cubes>
-<a-lot-of-cubes position="3 4 0" rotation="180 0 0"></a-lot-of-cubes>
+    <a-lot-of-cubes position="0 3 0"></a-lot-of-cubes>
+    <a-lot-of-cubes position="3 4 0" rotation="180 0 0"></a-lot-of-cubes>
 
 
-<template is="a-template" element="cubes-inherit" size="1">
-  <a-cube color="red" depth="${size}" height="${size}" width="${size}" position="-${size} 0 0"></a-cube>
-  <a-cube color="green" depth="${size}" height="${size}" width="${size}" position="-${size} ${size} 0"></a-cube>
-  <a-cube color="blue" depth="${size}" height="${size}" width="${size}" position="0 ${size} 0"></a-cube>
-</template>
+    <template is="a-template" element="cubes-inherit" size="1">
+      <a-cube color="red" depth="${size}" height="${size}" width="${size}" position="-${size} 0 0"></a-cube>
+      <a-cube color="green" depth="${size}" height="${size}" width="${size}" position="-${size} ${size} 0"></a-cube>
+      <a-cube color="blue" depth="${size}" height="${size}" width="${size}" position="0 ${size} 0"></a-cube>
+    </template>
 
-<cubes-inherit size="0.5"></cubes-inherit>
-<cubes-inherit position="2 0 0"></cubes-inherit>
+    <cubes-inherit size="0.5"></cubes-inherit>
+    <cubes-inherit position="2 0 0"></cubes-inherit>
 
   </a-scene>
 </body>
