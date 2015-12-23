@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>A-Frame Template example by @rootx</title>
   <!-- <script src="https://aframe.io/releases/latest/aframe.min.js" charset="utf-8"></script> -->
-  <script src="https://aframe.io/releases/latest/aframe.js" charset="utf-8"></script>
+  <script src="libs/aframe.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5.1/dat.gui.min.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
@@ -13,9 +13,9 @@
 <body>
   <a-scene>
     <template is="a-template" element="a-lot-of-cubes">
-      <a-cube color="red" depth="1" height="1" width="1" position="-1 0 0"></a-cube>
-      <a-cube color="blue" depth="1" height="1" width="1" position="0 1 0"></a-cube>
-      <a-cube color="green" depth="1" height="1" width="1" position="1 0 0"></a-cube>
+      <a-sphere color="#c46" radius="0.5" position="-1 0 0"></a-sphere>
+      <a-sphere color="#c57" radius="0.5" position="0 1 0"></a-sphere>
+      <a-sphere color="#f69" radius="0.5" position="1 0 0"></a-sphere>
     </template>
 
     <a-lot-of-cubes position="0 3 0"></a-lot-of-cubes>
@@ -23,9 +23,9 @@
 
 
     <template is="a-template" element="cubes-inherit" size="1">
-      <a-cube color="red" depth="${size}" height="${size}" width="${size}" position="-${size} 0 0"></a-cube>
-      <a-cube color="green" depth="${size}" height="${size}" width="${size}" position="-${size} ${size} 0"></a-cube>
-      <a-cube color="blue" depth="${size}" height="${size}" width="${size}" position="0 ${size} 0"></a-cube>
+      <a-cube color="#3f6" depth="${size}" height="${size}" width="${size}" position="-${size} 0 0"></a-cube>
+      <a-cube color="#6f9" depth="${size}" height="${size}" width="${size}" position="-${size} ${size} 0"></a-cube>
+      <a-cube color="#9f9" depth="${size}" height="${size}" width="${size}" position="0 ${size} 0"></a-cube>
     </template>
 
     <cubes-inherit size="0.5"></cubes-inherit>
